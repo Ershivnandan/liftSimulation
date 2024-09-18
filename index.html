@@ -13,45 +13,49 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="changeSimulation displayRemove" id="changeSimulation">
-      <div>
-        <button class="submitBtn" onclick="updateSimulation(true)">Change Simulation</button>
+    <div class="container">
+      <div class="changeSimulation displayRemove" id="changeSimulation">
+        <div>
+          <button class="submitBtn" onclick="updateSimulation(true)">
+            Change Simulation
+          </button>
+        </div>
       </div>
-    </div>
-    <div class="formDiv" id="formDivId">
-      <form target="_parent" class="mainForm" id="formId">
-        <div>
-          <h1>Lift Simulation</h1>
-        </div>
-        <div>
-          <label class="formLabel" for="floor">Number of Floors</label> <br />
-          <input
-            class="formInput"
-            type="number"
-            id="numberOfFloor"
-            name="floor"
-            required
-            max="10"
-            min="2"
-          />
-        </div>
-        <div>
-          <label class="formLabel" for="lifts">Number of Lifts</label> <br />
-          <input
-            class="formInput"
-            type="number"
-            id="numberOfLifts"
-            name="lifts"
-            required
-            max="10"
-            min="1"
-          />
-        </div>
+      <div class="formDiv" id="formDivId">
+        <form target="_parent" class="mainForm" id="formId">
+          <div>
+            <h1>Lift Simulation</h1>
+          </div>
+          <div>
+            <label class="formLabel" for="floor">Number of Floors</label> <br />
+            <input
+              class="formInput"
+              type="number"
+              id="numberOfFloor"
+              name="floor"
+              required
+              max="10"
+              min="2"
+            />
+          </div>
+          <div>
+            <label class="formLabel" for="lifts">Number of Lifts</label> <br />
+            <input
+              class="formInput"
+              type="number"
+              id="numberOfLifts"
+              name="lifts"
+              required
+              max="10"
+              min="1"
+            />
+          </div>
 
-        <div>
-          <button type="submit" class="submitBtn">Create Simulation</button>
-        </div>
-      </form>
+          <div>
+            <button type="submit" class="submitBtn">Create Simulation</button>
+          </div>
+        </form>
+      </div>
     </div>
   </body>
   <script src="script.js"></script>
