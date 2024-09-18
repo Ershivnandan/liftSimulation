@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lift Simulation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="changeSimulation displayRemove" id="changeSimulation">
+      <div>
+        <button class="submitBtn" onclick="updateSimulation(true)">Change Simulation</button>
+      </div>
+    </div>
+    <div class="formDiv" id="formDivId">
+      <form target="_parent" class="mainForm" id="formId">
+        <div>
+          <h1>Lift Simulation</h1>
+        </div>
+        <div>
+          <label class="formLabel" for="floor">Number of Floors</label> <br />
+          <input
+            class="formInput"
+            type="number"
+            id="numberOfFloor"
+            name="floor"
+            required
+            max="10"
+            min="2"
+          />
+        </div>
+        <div>
+          <label class="formLabel" for="lifts">Number of Lifts</label> <br />
+          <input
+            class="formInput"
+            type="number"
+            id="numberOfLifts"
+            name="lifts"
+            required
+            max="10"
+            min="1"
+          />
+        </div>
+
+        <div>
+          <button type="submit" class="submitBtn">Create Simulation</button>
+        </div>
+      </form>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>

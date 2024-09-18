@@ -1,0 +1,199 @@
+/* Google Fonts  */
+
+.prompt-thin {
+  font-family: "Prompt", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.prompt-extralight {
+  font-family: "Prompt", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.prompt-light {
+  font-family: "Prompt", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.prompt-regular {
+  font-family: "Prompt", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.prompt-medium {
+  font-family: "Prompt", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.prompt-semibold {
+  font-family: "Prompt", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.prompt-bold {
+  font-family: "Prompt", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.prompt-extrabold {
+  font-family: "Prompt", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.prompt-black {
+  font-family: "Prompt", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.prompt-thin-italic {
+  font-family: "Prompt", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.prompt-extralight-italic {
+  font-family: "Prompt", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.prompt-light-italic {
+  font-family: "Prompt", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.prompt-regular-italic {
+  font-family: "Prompt", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.prompt-medium-italic {
+  font-family: "Prompt", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.prompt-semibold-italic {
+  font-family: "Prompt", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.prompt-bold-italic {
+  font-family: "Prompt", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.prompt-extrabold-italic {
+  font-family: "Prompt", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.prompt-black-italic {
+  font-family: "Prompt", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+body{
+    font-family: "Prompt", sans-serif;
+}
+
+/* Main container styling */
+.formDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+/* Form styling */
+.mainForm {
+  text-align: center;
+  border: 2px solid #66a8ff;
+  border-radius: 20px;
+  padding: 20px 40px 40px 40px;
+  background-color: #0077ff;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+.displayRemove{
+    display: none;
+}
+
+.displayAppend{
+    display: block;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* Label styling */
+.formLabel {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  text-align: left;
+  display: block;
+  margin-bottom: -8px;
+}
+
+/* Input field styling */
+.formInput {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.formInput:focus {
+  border-color: #ff5722;
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 87, 34, 0.5);
+}
+
+/* Button styling */
+.submitBtn {
+  background-color: #ff5722;
+  color: white;
+  font-size: 18px;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submitBtn:hover {
+  background-color: #ff7043;
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.submitBtn:active {
+  background-color: #ff5722;
+  transform: translateY(0px);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
