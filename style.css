@@ -108,8 +108,8 @@
   font-style: italic;
 }
 
-body{
-    font-family: "Prompt", sans-serif;
+body {
+  font-family: "Prompt", sans-serif;
 }
 
 /* Main container styling */
@@ -132,12 +132,12 @@ body{
   width: 300px;
 }
 
-.displayRemove{
-    display: none;
+.displayRemove {
+  display: none;
 }
 
-.displayAppend{
-    display: block;
+.displayAppend {
+  display: block;
 }
 
 h1 {
@@ -196,4 +196,105 @@ h1 {
   background-color: #ff5722;
   transform: translateY(0px);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Simulatio  area styling  */
+
+.simulationArea {
+  padding: 10px 5rem 10px 5rem;
+}
+.simulation {
+  display: flex;
+  border-bottom: 4px solid black;
+  padding-bottom: 10px;
+  gap: 20px;
+}
+.simulationHeading {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+/* Main Lift Styling  */
+
+.lift-container {
+  position: relative;
+  width: 100px;
+  height: 150px;
+  background-color: #999;
+  border: 1px solid gray;
+  border-radius: 5px;
+  overflow: hidden;
+  gap: 5px;
+}
+
+.door-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #0fa723;
+  transition: width 1s ease;
+}
+
+.door-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #0fa723;
+  transition: width 1s ease;
+}
+
+.lift-container:hover .door-left {
+  width: 0%;
+}
+
+.lift-container:hover .door-right {
+  width: 0%;
+}
+
+/* Button CSS */
+.button-3 {
+  background-color: #2ea44f;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.button-3:focus:not(:focus-visible):not(.focus-visible) {
+  box-shadow: none;
+  outline: none;
+}
+
+.button-3:hover {
+  background-color: #2c974b;
+}
+
+.button-3:focus {
+  box-shadow: rgba(46, 164, 79, 0.4) 0 0 0 3px;
+  outline: none;
+}
+
+.button-3:disabled {
+  background-color: #94d3a2;
+  border-color: rgba(27, 31, 35, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  cursor: default;
+}
+
+.button-3:active {
+  background-color: #298e46;
+  box-shadow: rgba(20, 70, 32, 0.2) 0 1px 0 inset;
 }
