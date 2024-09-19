@@ -228,6 +228,15 @@ h1 {
   gap: 5px;
 }
 
+.liftArea {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  padding: 10px 0 10px 0;
+}
+
 .door-left {
   position: absolute;
   top: 0;
