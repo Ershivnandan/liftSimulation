@@ -200,19 +200,29 @@ h1 {
 
 /* Simulatio  area styling  */
 
+.simulationItem1 {
+  grid-area: heading;
+}
+.simulationItem2 {
+  grid-area: lift;
+}
 .simulationArea {
   padding: 10px 5rem 10px 5rem;
+  
 }
 .simulation {
-  display: flex;
+  display: grid;
+  grid-template-areas: "heading heading heading lift lift lift";
   border-bottom: 4px solid black;
   padding-bottom: 10px;
   gap: 20px;
+  height: 160px;
 }
+
 .simulationHeading {
   display: flex;
   align-items: center;
-  gap: 5rem;
+  gap: 1rem;
 }
 
 /* Main Lift Styling  */
@@ -238,7 +248,10 @@ h1 {
 }
 
 .door-left {
+  text-align: end;
   position: absolute;
+  color: white;
+  font-weight: 500;
   top: 0;
   left: 0;
   width: 50%;
@@ -249,6 +262,8 @@ h1 {
 
 .door-right {
   position: absolute;
+  color: white;
+  font-weight: 500;
   top: 0;
   right: 0;
   width: 50%;
@@ -281,29 +296,27 @@ h1 {
   text-align: center;
   white-space: nowrap;
 }
-
-.button-3:focus:not(:focus-visible):not(.focus-visible) {
-  box-shadow: none;
-  outline: none;
+.button-4 {
+  background-color: #b6801c;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
 }
 
+
+.button-4:hover {
+  background-color: #af5a15;
+}
 .button-3:hover {
   background-color: #2c974b;
 }
 
-.button-3:focus {
-  box-shadow: rgba(46, 164, 79, 0.4) 0 0 0 3px;
-  outline: none;
-}
-
-.button-3:disabled {
-  background-color: #94d3a2;
-  border-color: rgba(27, 31, 35, 0.1);
-  color: rgba(255, 255, 255, 0.8);
-  cursor: default;
-}
-
-.button-3:active {
-  background-color: #298e46;
-  box-shadow: rgba(20, 70, 32, 0.2) 0 1px 0 inset;
-}

@@ -59,7 +59,20 @@ function generateSimulation(flor, lift) {
     const simulationDiv = document.createElement("div");
     simulationDiv.classList.add("simulation");
 
-    const simulationHeading = `
+    let simulationHeading;
+
+    if (i == flor) {
+      simulationHeading = `
+      <div class="simulationHeading">
+          <h4>Floor : ${i}</h4>
+          <span>
+            <button class="button-4">Down</button>
+          </span>
+        </div>
+    `;
+    }
+    else if(i == 1){
+      simulationHeading = `
       <div class="simulationHeading">
           <h4>Floor : ${i}</h4>
           <span>
@@ -67,6 +80,18 @@ function generateSimulation(flor, lift) {
           </span>
         </div>
     `;
+    }
+    else{
+      simulationHeading = `
+      <div class="simulationHeading simulationItem1">
+          <h4>Floor : ${i}</h4>
+          <span>
+            <button class="button-4">Down</button>
+            <button class="button-3">Up</button>
+          </span>
+        </div>
+    `;
+    }
 
     if (flag == true && i == 1) {
       let liftContainers = "";
@@ -74,14 +99,14 @@ function generateSimulation(flor, lift) {
       for (let j = lift; j >= 1; j--) {
         liftContainers += `
         <div class="lift-container">
-            <div class="door-left"></div>
-            <div class="door-right"></div>
+            <div class="door-left">Lift </div>
+            <div class="door-right">${" " + lift - j + 1}</div>
           </div>
       `;
       }
 
       const liftArea = `
-        <div class="liftArea">
+        <div class="liftArea simulationItem2">
         ${liftContainers}
         </div>
       `;
