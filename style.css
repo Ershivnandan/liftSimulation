@@ -215,6 +215,7 @@ h1 {
   grid-template-areas: "heading heading heading lift lift lift";
   border-bottom: 4px solid black;
   padding-bottom: 10px;
+  /* width: 200px; */
   gap: 20px;
   height: 160px;
 }
@@ -223,6 +224,7 @@ h1 {
   display: flex;
   align-items: center;
   gap: 1rem;
+  width: 220px;
 }
 
 /* Main Lift Styling  */
@@ -230,7 +232,7 @@ h1 {
 .lift-container {
   position: relative;
   width: 100px;
-  height: 150px;
+  height: 160px;
   background-color: #999;
   border: 1px solid gray;
   border-radius: 5px;
@@ -239,10 +241,10 @@ h1 {
 }
 
 .liftArea {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  align-items: center;
-  justify-content: center;
+  display: flex;
+  /* grid-template-columns: repeat(5, 1fr);
+  align-items: center; */
+  justify-content: left;
   gap: 100px;
   padding: 10px 0 10px 0;
 }
@@ -272,13 +274,6 @@ h1 {
   transition: width 1s ease;
 }
 
-.lift-container:hover .door-left {
-  width: 0%;
-}
-
-.lift-container:hover .door-right {
-  width: 0%;
-}
 
 /* Button CSS */
 .button-3 {

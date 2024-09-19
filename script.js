@@ -4,6 +4,8 @@ let changeSim = document.getElementById("changeSimulation");
 let container = document.getElementsByClassName("container")[0];
 let simulationArea = document.getElementById("simulationAreaId");
 
+let positions = [];
+
 // form view update & Form handling
 
 function updateSimulation(flag) {
@@ -54,7 +56,9 @@ function generateSimulation(flor, lift) {
   console.log("called", flor, lift);
 
   simulationArea.innerHTML = "";
+  positions = new Array(parseInt(lift)).fill(1);
   flag = true;
+
   for (let i = flor; i >= 1; i--) {
     const simulationDiv = document.createElement("div");
     simulationDiv.classList.add("simulation");
@@ -66,28 +70,26 @@ function generateSimulation(flor, lift) {
       <div class="simulationHeading">
           <h4>Floor : ${i}</h4>
           <span>
-            <button class="button-4">Down</button>
+            <button class="button-4" onclick="requestLift(${i})">Down</button>
           </span>
         </div>
     `;
-    }
-    else if(i == 1){
+    } else if (i == 1) {
       simulationHeading = `
       <div class="simulationHeading">
           <h4>Floor : ${i}</h4>
           <span>
-            <button class="button-3">Up</button>
+            <button class="button-3" onclick="requestLift(${i})">Up</button>
           </span>
         </div>
     `;
-    }
-    else{
+    } else {
       simulationHeading = `
       <div class="simulationHeading simulationItem1">
           <h4>Floor : ${i}</h4>
           <span>
-            <button class="button-4">Down</button>
-            <button class="button-3">Up</button>
+            <button class="button-4" onclick="requestLift(${i})">Down</button>
+            <button class="button-3" onclick="requestLift(${i})">Up</button>
           </span>
         </div>
     `;
@@ -98,9 +100,9 @@ function generateSimulation(flor, lift) {
 
       for (let j = lift; j >= 1; j--) {
         liftContainers += `
-        <div class="lift-container">
-            <div class="door-left">Lift </div>
-            <div class="door-right">${" " + lift - j + 1}</div>
+        <div class="lift-container" id="lift-${j}">
+            <div class="door-left">Lift</div>
+            <div class="door-right">${lift - j + 1}</div>
           </div>
       `;
       }
@@ -121,4 +123,57 @@ function generateSimulation(flor, lift) {
   }
 
   simulationArea.classList.remove("displayRemove");
+}
+
+// Lift movement
+
+function requestLift(floor) {
+  console.log(floor);
+
+  let closestLift = null;
+  let minDistance = Infinity;
+
+  positions.forEach((currentFloor, liftIndex) => {
+    const distance = Math.abs(currentFloor - floor);
+    if (distance < minDistance) {
+      closestLift = liftIndex;
+      minDistance = distance;
+    }
+  });
+
+  if (positions[closestLift] === floor) {
+    openLiftDoors(closestLift);
+  } else {
+    moveLiftToFloor(closestLift, floor);
+  }
+}
+
+function moveLiftToFloor(liftIndex, targetFloor) {
+  const lift = document.getElementById(`lift-${liftIndex + 1}`);
+  const currentFloor = positions[liftIndex];
+
+  const floorDifference = Math.abs(targetFloor - currentFloor);
+  const timeToMove = floorDifference * 1;
+
+  lift.style.transition = `transform ${timeToMove}s ease`;
+  lift.style.transform = `translateY(${-(targetFloor - 1) * 185}px)`;
+
+  setTimeout(() => {
+    positions[liftIndex] = targetFloor;
+    openLiftDoors(liftIndex);
+  }, timeToMove * 1000);
+}
+
+function openLiftDoors(liftIndex) {
+  const lift = document.getElementById(`lift-${liftIndex + 1}`);
+  const doorLeft = lift.querySelector(".door-left");
+  const doorRight = lift.querySelector(".door-right");
+
+  doorLeft.style.width = "0%";
+  doorRight.style.width = "0%";
+
+  setTimeout(() => {
+    doorLeft.style.width = "50%";
+    doorRight.style.width = "50%";
+  }, 2000);
 }
